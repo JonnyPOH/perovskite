@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Version 0.0.2</title>
+	
+<script type="text/javascript" src="./jsmol/JSmol.min.js"></script>
+<script type="text/javascript">
+// Async Removes Menu Options
+Jmol._isAsync = false;
+
+// Intial Start Options
+var Info = {
+	width: 365,
+	height: 370,
+	debug: false,
+	color: "0xDCDCDC",
+	use: "HTML5",
+	j2sPath: "./jsmol/j2s",
+	script: "set antialiasDisplay;load jsmol/data/perovskite.cif {444 666 1};zoom 85;set spin x 20; spin",
+	serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
+	addSelectionOptions: false,
+	disableJ2SLoadMonitor: true,
+  	disableInitialConsole: true,
+  	allowJavaScript: false
+}
+// Starts Applet
+$(document).ready(function() {
+  $("#appdiv").html(Jmol.getAppletHtml("jmolApplet0", Info))
+})
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #DCDCDC;
+}
+</style>
+
+</head>
+
+<body>
+<div id="appdiv"></div>
+</body>
+</html>
